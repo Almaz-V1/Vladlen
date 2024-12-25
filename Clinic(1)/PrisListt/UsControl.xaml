@@ -1,0 +1,241 @@
+﻿<UserControl x:Class="Clinic_1_.PrisListt.UsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Clinic_1_.PrisListt"
+             mc:Ignorable="d" 
+                         d:DesignHeight="450" Background="Wheat" d:DesignWidth="400">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Gold" Offset="0.0"/>
+                <GradientStop Color="#800020" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Grid.Row="1">
+            <Border HorizontalAlignment="Center" Background="#F4A460" BorderBrush="Black" BorderThickness="2" CornerRadius="20, 20, 20, 20" x:Name="BorderTExt" Width="317" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row ="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold"   FontStyle="Italic" FontSize="18" Content="№ пациента :" Width="161" />
+                        <Label Name="IdUs" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold"   FontStyle="Italic" FontSize="18"  Width="63" Grid.Column="1" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="98*"/>
+                            <ColumnDefinition Width="215*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <TextBox FontSize="22" PreviewTextInput="LasteNameBox_PreviewTextInput"  PreviewKeyDown="MainTextBox_PreviewKeyDown" x:Name="LasteNameBox" Grid.Row="0" Grid.Column="1" Style="{StaticResource PlaceholderTextBoxStyleVar2}" Tag="Фамилия" Margin="15,5,10,5">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <Label  Content="Фамилия:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Center" Width="98"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1" Content="" FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Margin="5,0,0,0" Width="175"/>
+                            <Label  Content="Имя:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Center" Width="78"/>
+                            <TextBox FontSize="22"   x:Name="NameBox" PreviewTextInput ="NameBox_PreviewTextInput" PreviewKeyDown="MainTextBox_PreviewKeyDown" Style="{StaticResource PlaceholderTextBoxStyleVar2}" Tag="Имя" Grid.Column="1" Margin="35,5,10,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="9"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Label  Grid.Column="0" Content="Отчество:"  FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Width="104" Grid.ColumnSpan="2"/>
+                            <TextBox  FontSize="22" PreviewTextInput="PatronymicBox_PreviewTextInput"   PreviewKeyDown="MainTextBox_PreviewKeyDown" x:Name="PatronomickBox" Grid.Column="1" Style="{StaticResource PlaceholderTextBoxStyleVar2}" Tag="Отчество" Margin="35,5,10,5" TextChanged="PatronomickBox_TextChanged">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="9"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Телефон:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Width="94" Grid.ColumnSpan="2"/>
+                        <TextBox FontSize="22" PreviewTextInput="Phone_PreviewTextInput" PreviewKeyDown="MainTextBox_PreviewKeyDown" MaxLength="12" TextChanged="TextBox_TextChanged" x:Name="Phone" Style="{StaticResource PlaceholderTextBoxStyleVar2}" Tag="Телефон" Grid.Column="1" Margin="35,5,10,5">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Логин:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Center" Width="78"/>
+                        <TextBox FontSize="22" PreviewTextInput="LoginNext_PreviewTextInput" MaxLength="25"  PreviewKeyDown="MainTextBox_PreviewKeyDown" Margin="35,5,10,5"  x:Name="LoginNext" Style="{StaticResource PlaceholderTextBoxStyleVar2}" Tag="Логин" Grid.Column="1">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label  Grid.Column="0"  Content="№ паспорт:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Width="119" Grid.ColumnSpan="2"/>
+                        <TextBox FontSize="22" Style="{StaticResource PlaceholderTextBoxStyleVar2}" PreviewTextInput="NomerPasport_PreviewTextInput"  PreviewKeyDown="MainTextBox_PreviewKeyDown"  x:Name="NomerPasport" Tag="№ паспорта" Margin="35,5,10,5" Grid.Column="1">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label  Grid.Column="0" Content="Серия :"  FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Width="88" Grid.ColumnSpan="2"/>
+                        <TextBox PreviewTextInput="SerPasport_PreviewTextInput"  PreviewKeyDown="MainTextBox_PreviewKeyDown" FontSize="22" Margin="35,5,10,5" Style="{StaticResource PlaceholderTextBoxStyleVar2}"  x:Name="SerPasport" Tag="Серия паспорта" Grid.Column="1" >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                        </Grid>
+
+                    </Grid>
+                    <Grid Grid.Row="9">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label  Grid.Column="0" Content="Пароль:" FontStyle="Italic" FontSize="18" HorizontalAlignment="Left" Width="83" Height="37" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                        <TextBox FontSize="22" PreviewTextInput="PasswordBox_PreviewTextInput" MaxLength="25" PreviewKeyDown="MainTextBox_PreviewKeyDown" Style="{StaticResource PlaceholderTextBoxStyleVar2}"  x:Name="PasswordBox" Tag="Пароль" Margin="35,5,10,5" Grid.Column="1">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="9"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label  Grid.Column="0" Content="ДД.ММ.ГГГГ:" FontStyle="Italic" FontSize="18" Grid.ColumnSpan="2" Margin="0,-5,200,10" />
+
+                        <DatePicker x:Name="BirthdayPicker" SelectedDateFormat="Long" Grid.Column="1" SelectedDateChanged="BirthDatePicker_SelectedDateChanged" Margin="35,5,10,5"/>
+
+
+                    </Grid>
+                    <Grid Grid.Row="12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width ="1*"/>
+                                <ColumnDefinition Width ="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button  Background="Gold" Content="Редактировать" x:Name="Redact" Click="Redact_Click" Grid.Column="0" Margin="5,5,5,5">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button Content="Удалить" x:Name="Remuv" Click="Remuv_Click_1" Grid.Column="1" Margin="5,5,5,5">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
